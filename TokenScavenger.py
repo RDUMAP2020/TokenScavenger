@@ -2,10 +2,10 @@
 
 # Author Maulidi Barasa
 # ==============================================================================
-# DeepMime Trainer — LAA-GIGPO Integration
+# TokenScavenger Trainer — LAA-GIGPO Integration
 # ==============================================================================
 """
-DEEP-MIME: Deep Exploration and Exploitation Policy with Memory-Integrated
+TokenScavenger: Deep Exploration and Exploitation Policy with Memory-Integrated
 Model Emulation.
 
 This module implements a reinforcement learning trainer that combines:
@@ -4704,7 +4704,7 @@ class DeepMimeTrainer:
 if __name__ == "__main__":
     START_FROM_SCRATCH: str  = "yes"
     TARGET_TOTAL_STEPS: int  = 3250
-    CHECKPOINT_FILENAME: str = "deepmime_v2_latest.pth"
+    CHECKPOINT_FILENAME: str = "TokenScavenger.pth"
     CHECKPOINT_DIR: Path     = Path("checkpoints")
 
     print(get_syllabus_summary())
@@ -4752,7 +4752,7 @@ if __name__ == "__main__":
             if (step_idx + 1) % 50 == 0:
                 trainer.save_checkpoint(CHECKPOINT_FILENAME)
 
-        trainer.save_checkpoint("deepmime_v2_final.pth")
+        trainer.save_checkpoint("TokenScavenger.pth")
         logging.getLogger("RL-ILP-Agent").info("Testing with EMA weights ...")
 
         if hasattr(trainer, "ema") and trainer.ema is not None:
